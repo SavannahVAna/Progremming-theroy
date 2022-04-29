@@ -4,11 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class plane : vehicle
+public class plane : vehicle //INHERITANCE
 {
-    private float posX;
-    private float posY ;
-    private float posZ ;
     private Vector3 bruh= new Vector3(0, 0, 0);
 
     [SerializeField] private Rigidbody rb;
@@ -26,16 +23,16 @@ public class plane : vehicle
         
     }
     
-    private void ChangeVector()
+    private void ChangeVector()//ABSTRACTION
     {
-        posX = Random.Range(-1f, 1f);
-        posY = Random.Range(-1f, 1f);
-        posZ = Random.Range(-1f, 1f);
+        var posX = Random.Range(-1f, 1f);
+        var posY = Random.Range(-1f, 1f);
+        var posZ = Random.Range(-1f, 1f);
         bruh = new Vector3(posX, posY, posZ);
     }
 
-    public override void Move()
+    public override void Move() //POLYMORPHISM
     {
-        rb.AddForce(bruh,ForceMode.Force);
+        rb.AddForce(bruh*10,ForceMode.Force);
     }
 }

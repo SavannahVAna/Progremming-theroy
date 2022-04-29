@@ -5,7 +5,7 @@ using UnityEngine;
 public class vehicle : MonoBehaviour
 {
     private int _year = 1;
-    public int year
+    public int year//ENCAPSULATION
     {
         get { return _year;}
         set {
